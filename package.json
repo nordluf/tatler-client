@@ -1,6 +1,6 @@
 {
   "name": "tatler-client",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "Client for tatler.tk notification service",
   "main": "index.js",
   "scripts": {
@@ -8,11 +8,12 @@
     "test:coverage": "istanbul cover _mocha -- test/client.js",
     "lint": "semistandard",
     "precommit": "npm test && npm run lint",
-    "commitmsg": "validate-commit-msg"
+    "commitmsg": "validate-commit-msg",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nordluf/tatler-client.git"
+    "url": "https://github.com/nordluf/tatler-client.git"
   },
   "keywords": [
     "notifications",
@@ -30,7 +31,8 @@
     "istanbul": "^0.4.5",
     "mocha": "^3.5.0",
     "semistandard": "^11.0.0",
-    "validate-commit-msg": "^2.14.0"
+    "validate-commit-msg": "^2.14.0",
+    "semantic-release": "^6.3.6"
   },
   "semistandard": {
     "globals": [

@@ -1,0 +1,2 @@
+# tatler-client
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/abeaa6ecaeed41feb173a0a74fd1966e)](https://www.codacy.com/app/nordluf/tatler-client?utm_source=github.com&utm_medium=referral&utm_content=nordluf/tatler-client&utm_campaign=badger)

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "test:coverage": "istanbul cover _mocha -- test/client.js",
+    "test:coverage": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | codacy-coverage && rm -rf ./coverage",
     "lint": "semistandard",
     "precommit": "npm test && npm run lint",
     "commitmsg": "validate-commit-msg",
@@ -26,13 +26,15 @@
   },
   "homepage": "https://github.com/nordluf/tatler-client#readme",
   "devDependencies": {
+    "codacy-coverage": "^2.0.2",
     "express": "^4.15.3",
     "husky": "^0.14.3",
     "istanbul": "^0.4.5",
     "mocha": "^3.5.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "semantic-release": "^6.3.6",
     "semistandard": "^11.0.0",
-    "validate-commit-msg": "^2.14.0",
-    "semantic-release": "^6.3.6"
+    "validate-commit-msg": "^2.14.0"
   },
   "semistandard": {
     "globals": [
@@ -42,8 +44,5 @@
       "after",
       "it"
     ]
-  },
-  "dependencies": {
-    "husky": "^0.14.3"
   }
 }

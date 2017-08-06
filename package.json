@@ -1,0 +1,47 @@
+{
+  "name": "tatler-client",
+  "version": "0.0.1",
+  "description": "Client for tatler.tk notification service",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "test:coverage": "istanbul cover _mocha -- test/client.js",
+    "lint": "semistandard",
+    "precommit": "npm test && npm run lint",
+    "commitmsg": "validate-commit-msg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nordluf/tatler-client.git"
+  },
+  "keywords": [
+    "notifications",
+    "telegram"
+  ],
+  "author": "Evgeny Kruglov",
+  "license": "JSON",
+  "bugs": {
+    "url": "https://github.com/nordluf/tatler-client/issues"
+  },
+  "homepage": "https://github.com/nordluf/tatler-client#readme",
+  "devDependencies": {
+    "express": "^4.15.3",
+    "husky": "^0.14.3",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.0",
+    "semistandard": "^11.0.0",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "semistandard": {
+    "globals": [
+      "describe",
+      "before",
+      "beforeEach",
+      "after",
+      "it"
+    ]
+  },
+  "dependencies": {
+    "husky": "^0.14.3"
+  }
+}

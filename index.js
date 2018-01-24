@@ -31,7 +31,7 @@ module.exports.doRequest = (pipe, secret, message, clb) => {
       res.on('data', (chunk) => {
         str += chunk;
       }).on('end', () => {
-        if (str === 'OK' && res.statusCode === 200) {
+        if (str === 'scheduled' && res.statusCode === 200) {
           resolve();
         } else {
           reject(new Error(`HTTP${res.statusCode}: ${str}`));

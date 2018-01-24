@@ -12,11 +12,11 @@ NodeJS client for sending notifications to [@TatlerBot](https://t.me/tatlerbot) 
 Usage:
 ```javascript
 const tatler = require('tatler-client');
-const clientLong = tatler({PipeName: 'PipePassword', Pipe2Name: 'Pipe2Password', ...});
+const clientLong = tatler({PipeName: 'PipeSecret', Pipe2Name: 'Pipe2Secret', ...});
 clientLong('PipeName', 'Any message', callback);
 clientLong('Pipe2Name', 'Any message').then(handler);
 
-const clientShort = tatler({PipeName: 'PipePassword', Pipe2Name: 'Pipe2Password', ...}, 'PipeName');
+const clientShort = tatler({PipeName: 'PipeSecret', Pipe2Name: 'Pipe2Secret', ...}, 'PipeName');
 clientShort('Any message', callback);
 clientShort('Any message').then(handler);
 ```

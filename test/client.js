@@ -23,7 +23,7 @@ describe('Tatler-client send request', function () {
         return res.status(403).end();
       }
 
-      res.send('OK');
+      res.send('scheduled');
     });
     server = app.listen(4000, done);
   });

@@ -18,6 +18,9 @@ module.exports = (config, pipe) => {
 };
 
 module.exports.doRequest = (pipe, secret, message, clb) => {
+  if (message.length > 8192) {
+    message = message.substr(0, 8192);
+  }
   const options = {
     host: process.env.TATLER_CLIENT_HOST ? process.env.TATLER_CLIENT_HOST : 'tatler.tk',
     path: `/msg/${pipe}/${secret}/?` + encodeURIComponent(message),

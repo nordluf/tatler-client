@@ -22,7 +22,7 @@ module.exports.doRequest = (pipe, secret, message, clb) => {
     message = message.substr(0, 8192);
   }
   const options = {
-    host: process.env.TATLER_CLIENT_HOST ? process.env.TATLER_CLIENT_HOST : 'tatler.tk',
+    host: process.env.TATLER_CLIENT_HOST ? process.env.TATLER_CLIENT_HOST : 'tatler.ekruglov.com',
     path: `/msg/${pipe}/${secret}/?` + encodeURIComponent(message),
     port: process.env.TATLER_CLIENT_PORT ? process.env.TATLER_CLIENT_PORT : 80,
     timeout: 5000
@@ -41,7 +41,7 @@ module.exports.doRequest = (pipe, secret, message, clb) => {
         }
       });
     }).on('error', (err) => {
-      console.error(`Error happened while sending tatler.tk notification: ${err.message}`);
+      console.error(`Error happened while sending tatler.ekruglov.com notification: ${err.message}`);
       reject(err.message);
     }).end();
   });

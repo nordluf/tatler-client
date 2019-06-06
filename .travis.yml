@@ -5,13 +5,9 @@ cache:
 notifications:
   email: false
 node_js:
-  - '12'
-  - '11'
   - '10'
-  - '8'
-  - '6'
 after_success:
-  - npm run travis-deploy-once "npm run semantic-release"
+  - npm run travis-deploy-once --pro "npm run semantic-release"
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/

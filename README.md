@@ -17,4 +17,8 @@ clientLong('Pipe2Name', 'Any message').then(handler);
 const clientShort = tatler({PipeName: 'PipeSecret', Pipe2Name: 'Pipe2Secret', ...}, 'PipeName');
 clientShort('Any message', callback);
 clientShort('Any message').then(handler);
+
+const clientOnePipe = tatler({PipeName: 'PipeSecret'});
+clientOnePipe('Any message', callback);
+clientOnePipe('Any message').then(handler);
 ```

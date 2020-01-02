@@ -11,7 +11,7 @@ module.exports = (config, pipe) => {
     return (message, clb) => module.exports.doRequest(pipe, config[pipe], message, clb);
   }
   return (pipe, message, clb) => {
-    if (!clb && keys.length === 1) {
+    if (!clb && keys.length === 1 && (!message || typeof message === 'function')) {
       clb = message;
       message = pipe;
       pipe = keys[0];

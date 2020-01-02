@@ -43,6 +43,15 @@ describe('Tatler-client send request', function () {
     });
   });
 
+  it('Client with correct short call and callback with one pipe and with pipe in call and promise', (done) => {
+    const client = tatler({ fakepipe: 'PasswordCorrect' });
+    client('Faked Message', (err) => {
+      assert.ifError(err);
+      assert.strictEqual(url, '/msg/fakepipe/PasswordCorrect/?Faked%20Message');
+      done();
+    });
+  });
+
   it('Client with correct short call and callback', (done) => {
     const client = tatler({ fakepipe: 'PasswordCorrect', fakepipe2: 'PasswordInCorrect' }, 'fakepipe');
     client('Faked Message with some ch@rs!', (err) => {
@@ -73,6 +82,15 @@ describe('Tatler-client send request', function () {
   it('Client with correct short call and promise', (done) => {
     const client = tatler({ fakepipe: 'PasswordCorrect', fakepipe2: 'PasswordInCorrect' }, 'fakepipe');
     client('Faked Message with some ch@rs!').then((err) => {
+      assert.ifError(err);
+      assert.strictEqual(url, '/msg/fakepipe/PasswordCorrect/?Faked%20Message%20with%20some%20ch%40rs!');
+      done();
+    });
+  });
+
+  it('Client with correct short call with one pipe and with pipe in call and promise', (done) => {
+    const client = tatler({ fakepipe: 'PasswordCorrect' });
+    client('fakepipe', 'Faked Message with some ch@rs!').then((err) => {
       assert.ifError(err);
       assert.strictEqual(url, '/msg/fakepipe/PasswordCorrect/?Faked%20Message%20with%20some%20ch%40rs!');
       done();

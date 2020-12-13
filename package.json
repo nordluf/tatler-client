@@ -33,8 +33,8 @@
   "homepage": "https://github.com/nordluf/tatler-client#readme",
   "devDependencies": {
     "express": "^4.17.1",
-    "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@release-it/bumper": "^1.1.1",
     "@release-it/conventional-changelog": "^1.1.4",
     "@types/debug": "^4.1.5",

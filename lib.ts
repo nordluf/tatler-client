@@ -31,12 +31,21 @@ function tatler<T extends Configs, K extends keyof T> (config: T, pipe?: K | boo
 function doRequest (pipe: string, secret: string | undefined, message: string, clb: Callback | undefined, throwError: boolean) {
   let value = Promise.resolve()
   if (secret) {
-    if (message.length > 4000) {
-      message = message.substr(0, 4000)
-    }
     pipe = encodeURIComponent(pipe)
     secret = encodeURIComponent(secret)
-    message = encodeURIComponent(message)
+
+    let limit = 4000
+    do {
+      const encoded = encodeURIComponent(message.substr(0, limit))
+      if (encoded.length > 6144) {
+        limit -= 100
+        continue
+      }
+
+      message = encoded
+      break
+    } while (limit > 0)
+
     const options = {
       host: process.env.TATLER_CLIENT_HOST ? process.env.TATLER_CLIENT_HOST : 'tatler.ekruglov.com',
       path: `/msg/${pipe}/${secret}/?${message}`,

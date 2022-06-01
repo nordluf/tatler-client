@@ -21,7 +21,7 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm ci
-          npm run pre-commit
+          npm test
         env:
           CI: true
 
@@ -46,7 +46,7 @@ jobs:
       - name: npm release
         run: |
           npm ci
-          npm run build
+          npm run pre-commit
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > .npmrc
           npm run releaseit
         env:

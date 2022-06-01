@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "npm run build && mocha",
-    "lint": "standardx './src/**/*.ts' './test/**/*.ts'",
+    "lint": "semistandard './**/*.ts' './test/**/*.js'",
     "releaseit": "release-it --ci",
     "pre-commit": "npm test && npm run lint && npm audit --prod",
     "clean": "rm -rf ./dist",
@@ -38,14 +38,14 @@
     "@release-it/conventional-changelog": "^3.0.0",
     "@types/debug": "^4.1.7",
     "@types/node": "^12.20.37",
-    "@typescript-eslint/eslint-plugin": "^2.33.0",
-    "@typescript-eslint/parser": "^2.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^7.32.0",
     "express": "^4.17.1",
     "husky": "^4.3.8",
     "mocha": "^7.0.0",
     "release-it": "^14.0.0",
-    "standardx": "^5.0.0",
+    "semistandard": "^16.0.0",
     "typescript": "^3.9.10"
   },
   "files": [
@@ -62,7 +62,10 @@
       "@typescript-eslint/no-unused-vars": "error"
     }
   },
-  "standardx": {
+  "semistandard": {
+    "env": [
+      "mocha"
+    ],
     "parser": "@typescript-eslint/parser",
     "plugins": [
       "@typescript-eslint/eslint-plugin"

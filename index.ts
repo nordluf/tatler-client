@@ -1,3 +1,3 @@
-import tatler from './lib'
+import tatler from './lib';
 
 export = tatler

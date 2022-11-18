@@ -4,7 +4,7 @@ const tatler = require('../');
 const assert = require('assert');
 const express = require('express');
 
-process.env.TATLER_CLIENT_HOST = 'localhost';
+process.env.TATLER_CLIENT_HOST = '127.0.0.1';
 process.env.TATLER_CLIENT_PORT = 4000;
 
 describe('Tatler-client send request', function () {

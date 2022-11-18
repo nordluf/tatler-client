@@ -1,7 +1,7 @@
 {
   "name": "tatler-client",
   "version": "1.0.0",
-  "description": "Client for tatler.ekruglov.com notification service",
+  "description": "Client for tatler.jsbot.eu notification service",
   "main": "dist/index.js",
   "scripts": {
     "test": "npm run build && mocha",

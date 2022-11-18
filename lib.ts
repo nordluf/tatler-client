@@ -47,7 +47,7 @@ function doRequest (pipe: string, secret: string | undefined, message: string, c
     } while (limit > 0);
 
     const options = {
-      host: process.env.TATLER_CLIENT_HOST ? process.env.TATLER_CLIENT_HOST : 'tatler.ekruglov.com',
+      host: process.env.TATLER_CLIENT_HOST ? process.env.TATLER_CLIENT_HOST : 'tatler.jsbot.eu',
       path: `/msg/${pipe}/${secret}/?${message}`,
       port: process.env.TATLER_CLIENT_PORT ? process.env.TATLER_CLIENT_PORT : 80,
       timeout: 5000
@@ -66,7 +66,7 @@ function doRequest (pipe: string, secret: string | undefined, message: string, c
           }
         });
       }).on('error', (err) => {
-        console.error(`Error happened while sending tatler.ekruglov.com notification: ${err.message}`);
+        console.error(`Error happened while sending tatler.jsbot.eu notification: ${err.message}`);
         reject(err.message);
       }).end();
     });

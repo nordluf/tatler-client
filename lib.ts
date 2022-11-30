@@ -50,7 +50,7 @@ function doRequest (pipe: string, secret: string | undefined, message: string, c
     const options = {
       host: process.env.TATLER_CLIENT_HOST ? process.env.TATLER_CLIENT_HOST : 'tatler.jsbot.eu',
       path: `/msg/${pipe}/${secret}/?${message}`,
-      port: process.env.TATLER_CLIENT_PORT ? process.env.TATLER_CLIENT_PORT : 80,
+      port: process.env.TATLER_CLIENT_PORT ?? (process.env.TATLER_PREFER_HTTP ? 80 : 443),
       timeout: 5000
     };
 

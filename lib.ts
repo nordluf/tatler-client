@@ -1,4 +1,5 @@
 import http from 'http';
+import https from 'https';
 
 export interface Configs {
   [pipe: string]: string | undefined;
@@ -54,7 +55,7 @@ function doRequest (pipe: string, secret: string | undefined, message: string, c
     };
 
     value = new Promise((resolve, reject) => {
-      http.request(options, (res) => {
+      (process.env.TATLER_PREFER_HTTP ? http : https).request(options, (res) => {
         let str = '';
         res.on('data', (chunk) => {
           str += chunk;

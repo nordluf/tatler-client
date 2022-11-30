@@ -6,6 +6,7 @@ const express = require('express');
 
 process.env.TATLER_CLIENT_HOST = '127.0.0.1';
 process.env.TATLER_CLIENT_PORT = 4000;
+process.env.TATLER_PREFER_HTTP = 'yes';
 
 describe('Tatler-client send request', function () {
   let app = null;
